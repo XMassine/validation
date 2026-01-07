@@ -47,11 +47,11 @@ onEntry = lambda vertex,opaque : (vertex == "d" , opaque)
 
 def bfs(rg:RootedGraph, onEntry, opaque):
     queue = rg.roots()
-    k = []
+    k = set()
     while len(queue)>0:
         v=queue.pop(0)
         if v not in k:
-            k.append(v)
+            k.add(v)
             B,opaque = onEntry(v, opaque)
             if B:
                 return (v,opaque)
@@ -63,32 +63,3 @@ def bfs(rg:RootedGraph, onEntry, opaque):
 
 
 print(bfs(DictionaryGraph(graph, ["a"]), onEntry, None))
-
-
-
-def HanoïGraph():
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
